@@ -9,20 +9,22 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.example.hospitaldatabase.controller.PatientController;
+import com.example.hospitaldatabase.controller.UserDetailServiceImpl;
 
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
+
 public class HospitaldatabaseApplicationTests {
 
 	@Autowired
 	private PatientController controller;
 
-	//@Autowired
-	//private UserDetailServiceImpl userDetailServiceImpl;
-	//@Test
-	//public void contextLoads() throws Exception {
-	//	assertThat(controller).isNotNull();
-	//	assertThat(userDetailServiceImpl).isNotNull();
+	@Autowired
+	private UserDetailServiceImpl userDetailServiceImpl;
+	@Test
+	public void contextLoads() throws Exception {
+		assertThat(controller).isNotNull();
+		assertThat(userDetailServiceImpl).isNotNull();
 	}
-//}
+}
