@@ -31,7 +31,7 @@ public class MailComponent {
         mailMessage.setFrom(contact.getEmail());
         mailMessage.setSubject(contact.getSubject());
         mailMessage.setText(contact.getMessage());
-        mailMessage.setTo("email@email.com"); //put Gmail personal address
+        mailMessage.setTo("email@email.com"); //if using Gmail, need personal address
 
         try {
             mailSender.send(mailMessage);
@@ -51,7 +51,7 @@ public class MailComponent {
         MimeMessage mimeMessage = javaMailSender.createMimeMessage();
         MimeMessageHelper mailMessage = new MimeMessageHelper(mimeMessage);
         try {
-            mailMessage.setTo("email@email.com"); // put Gmail your personal address
+            mailMessage.setTo("email@email.com"); // if using Gmail, put personal address
             mailMessage.setFrom(contact.getEmail());
             mailMessage.setSubject(contact.getSubject());
             mailMessage.setText(messageHtml, true);
